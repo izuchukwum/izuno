@@ -1,0 +1,170 @@
+
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IZUNO — Making Student Life Easier</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  
+<header>
+    <h1>IZUNO</h1>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+
+    <main>
+<!-- hero section -->
+        <section class="hero" id="home">
+            <h2>Making Student Life Easier</h2>
+
+            <p>
+                Book the services you need without the stress.
+            </p>
+
+            <button>Explore Services</button>
+        </section>
+
+        <!-- service section -->
+
+        <section class="services" id="services">
+
+            <h2>What do you need?</h2>
+
+            <div class="service-container">
+
+                <div class="service-card">
+    <h3>💈 Barbing</h3>
+    <p>Find and book a barber.</p>
+    <button class="book-service" data-service="Barbing">
+        Book Now
+    </button>
+</div>
+
+<div class="service-card">
+    <h3>💅 Nails</h3>
+    <p>Book your nail appointment.</p>
+    <button class="book-service" data-service="Nails">
+        Book Now
+    </button>
+</div>
+
+<div class="service-card">
+    <h3>🧺 Laundry</h3>
+    <p>Get your laundry picked up and delivered.</p>
+    <button class="book-service" data-service="Laundry">
+        Book Now
+    </button>
+</div>
+
+ </div>
+        </section>
+
+        <!-- step card -->
+         
+<section class="how-it-works" id="how-it-works">
+    <h2>How It Works</h2>
+    <p class="section-intro">
+        Getting the services you need is simple.
+    </p>
+
+    <div class="steps-container">
+        <div class="step-card">
+            <h3>1. Choose a Service</h3>
+            <p>
+                Select barbing, nails, or laundry.
+            </p>
+        </div>
+
+        <div class="step-card">
+            <h3>2. Make a Booking</h3>
+            <p>
+                Enter your contact details and preferred date.
+            </p>
+        </div>
+
+        <div class="step-card">
+            <h3>3. Await Follow-up</h3>
+            <p>
+                Your booking request can be followed up
+                once the service is connected to a working
+                booking management system.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+
+        <section class="booking-panel" id="booking-panel" hidden>
+            <button type="button" id="back-to-booking">Back to booking
+        </button>
+    <h2>Book a Service</h2>
+
+    <p id="selected-service">
+        Your selected service will appear here.
+    </p>
+
+   <form id="booking-form">
+    <label for="student-name">Your name</label>
+    <input
+        type="text"
+        id="student-name"
+        placeholder="Enter your full name"
+        autocomplete="name"
+        required
+    >
+
+    <label for="student-phone">Phone number</label>
+    <input
+        type="tel"
+        id="student-phone"
+        placeholder="e.g. 08012345678"
+        autocomplete="tel"
+        required
+    >
+
+    <label for="student-address">Contact address</label>
+    <textarea
+        id="student-address"
+        placeholder="Enter your hostel, room number, or pickup address"
+        autocomplete="street-address"
+        rows="3"
+        required
+    ></textarea>
+
+    <label for="booking-date">Preferred date</label>
+    <input
+        type="date"
+        id="booking-date"
+        required
+    >
+
+    <button type="submit">Confirm Booking</button>
+</form>
+    <p id="booking-message" role="status"></p>
+</section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 IZUNO. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

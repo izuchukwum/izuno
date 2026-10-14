@@ -1,0 +1,264 @@
+/* 1. Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. General page styling */
+
+
+/* 3. Website header */
+
+/* 3. Website header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5eee8;
+    box-shadow: 0 3px 12px rgba(23, 107, 69, 0.06);
+}
+
+header h1 {
+    color: #176b45;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+
+/* 4. Navigation links */
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #35443b;
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: #176b45;
+}
+
+
+/* 5. Hero section */
+.hero {
+    text-align: center;
+    padding: 90px 20px;
+    background-color: #e8f4ec;
+}
+
+.hero h2 {
+    font-size: 42px;
+    color: #145536;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+/* 6. Main button */
+button {
+    background-color: #176b45;
+    color: #ffffff;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #104b30;
+}
+
+/* 7. Services section */
+.services {
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.services > h2 {
+    font-size: 30px;
+    margin-bottom: 35px;
+}
+
+/* 8. Service cards layout */
+.service-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+/* 9. Individual service cards */
+.service-card {
+    background-color: #ffffff;
+    padding: 30px 20px;
+    border-radius: 14px;
+    flex: 1 1 220px;
+    max-width: 320px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #176b45;
+}
+
+.service-card p {
+    color: #666;
+}
+
+/* 10. Footer */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #ffffff;
+    color: #666;
+    margin-top: 30px;
+}
+
+/* 11. Mobile responsiveness */
+@media (max-width: 650px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+    }
+
+    .hero {
+        padding: 65px 20px;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .services {
+        padding: 45px 20px;
+    }
+
+    .services > h2 {
+        font-size: 26px;
+    }
+}
+
+
+/* Booking panel */
+.booking-panel {
+    max-width: 600px;
+    margin: 20px auto 60px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.booking-panel[hidden] {
+    display: none;
+}
+
+.booking-panel h2 {
+    color: #145536;
+    margin-bottom: 10px;
+}
+
+.booking-panel form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.booking-panel input,
+.booking-panel textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    font: inherit;
+}
+
+.booking-panel label {
+    font-weight: bold;
+}
+
+#booking-message {
+    margin-top: 15px;
+    color: #176b45;
+}
+
+/* How It Works section */
+.how-it-works {
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.how-it-works h2 {
+    color: #145536;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.section-intro {
+    color: #647067;
+    margin-bottom: 30px;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.step-card {
+    flex: 1 1 200px;
+    max-width: 300px;
+    padding: 25px 20px;
+    background-color: #ffffff;
+    border: 1px solid #e5eee8;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.step-card h3 {
+    color: #176b45;
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.step-card p {
+    color: #647067;
+}
+
