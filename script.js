@@ -14,6 +14,14 @@ const servicesSection = document.querySelector("#services")
 
 const bookingDateInput = document.querySelector("#booking-date");
 
+const bookingReview = document.querySelector("#booking-review");
+
+const reviewDetails = document.querySelector("#review-details");
+
+const editBookingButton = document.querySelector("#edit-booking");
+
+const confirmBookingButton = document.querySelector("#confirm-booking");
+
 function getTodayDate(){
     const today =new Date();
 
@@ -46,7 +54,6 @@ bookingForm.reset();
         });
     });
 });
-
 bookingForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -62,23 +69,44 @@ bookingForm.addEventListener("submit", function (event) {
     const bookingDate =
         document.querySelector("#booking-date").value;
 
-        const dateparts =bookingDate.split("-");
+    const dateParts = bookingDate.split("-");
 
-        const formattedDate =
-        dateparts[2] + "/" +
-        dateparts[1] + "/" +
-        dateparts[0];
+    const formattedDate =
+        dateParts[2] + "/" +
+        dateParts[1] + "/" +
+        dateParts[0];
 
     const service = selectedService.textContent
         .replace("Selected service: ", "");
 
-    bookingMessage.textContent =
-        "Thank you, " + studentName +
-        "! Your " + service +
-        " booking request has been prepared for " + formattedDate +
-        ". We can contact you at " + studentPhone +
-        " regarding your booking at " + studentAddress + ".";
+    reviewDetails.innerHTML =
+        "<strong>Service:</strong> " + service + "<br>" +
+        "<strong>Name:</strong> " + studentName + "<br>" +
+        "<strong>Phone:</strong> " + studentPhone + "<br>" +
+        "<strong>Address:</strong> " + studentAddress + "<br>" +
+        "<strong>Date:</strong> " + formattedDate;
+
+    bookingForm.hidden = true;
+    bookingReview.hidden = false;
+    bookingMessage.textContent = "";
 });
+
+
+editBookingButton.addEventListener("click", function () {
+    bookingReview.hidden = true;
+    bookingForm.hidden = false;
+});
+
+
+confirmBookingButton.addEventListener("click", function () {
+    bookingReview.hidden = true;
+
+    bookingMessage.innerHTML =
+        "<strong>Booking Submitted Successfully!</strong><br><br>" +
+        "Your booking request has been received. " +
+        "We will contact you regarding your request.";
+});
+
 backToBookingButton.addEventListener("click", function () {
     bookingForm.reset();
 
@@ -87,6 +115,8 @@ backToBookingButton.addEventListener("click", function () {
 
     bookingMessage.textContent = "";
 
+    bookingReview.hidden = true;
+    bookingForm.hidden = false;
     bookingPanel.hidden = true;
 
     servicesSection.scrollIntoView({
@@ -94,6 +124,3 @@ backToBookingButton.addEventListener("click", function () {
         block: "start"
     });
 });
-
-
-

@@ -285,4 +285,54 @@ footer {
     margin-bottom: 12px;
 }
 
+#booking-message {
+    background-color: #f4f7f5;
+    border: 1px solid #dce8e1;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    line-height: 1.8;
+    color: #24332b;
+}
 
+
+/* Booking review */
+#booking-review {
+    background-color: #ffffff;
+    border: 1px solid #dce8e1;
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+#booking-review h3 {
+    color: #24332b;
+    margin-bottom: 20px;
+}
+
+#review-details {
+    background-color: #f4f7f5;
+    border-radius: 8px;
+    padding: 15px;
+    line-height: 1.8;
+    color: #24332b;
+}
+
+#booking-review button {
+    padding: 10px 16px;
+    margin: 10px 5px 0 0;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#edit-booking {
+    background-color: #e8eee9;
+    color: #24332b;
+}
+
+#confirm-booking {
+    background-color: #176b45;
+    color: white;
+}
