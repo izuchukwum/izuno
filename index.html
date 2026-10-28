@@ -28,51 +28,60 @@
 
     <main>
 <!-- hero section -->
-        <section class="hero" id="home">
-            <h2>Making Student Life Easier</h2>
+    
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h2>Making Student Life Easier</h2>
 
-            <p>
-                Book the services you need without the stress.
-            </p>
+        <p>
+            Book the services you need without the stress.
+        </p>
 
-            <button>Explore Services</button>
-        </section>
+        <button>Explore Services</button>
+    </div>
+
+    <div class="hero-image">
+        <img src="images/hero-img.png"
+             alt="Student using IZUNO to access barbing, nail and laundry services">
+    </div>
+</section>
+
 
         <!-- service section -->
 
         <section class="services" id="services">
 
             <h2>What do you need?</h2>
+<div class="service-container">
 
-            <div class="service-container">
+    <div class="service-card">
+        <img src="images/barbing.jpg" alt="Barbing service">
+        <h3>💈 Barbing</h3>
+        <p>Find and book a barber.</p>
+        <button class="book-service" data-service="Barbing">
+            Book Now
+        </button>
+    </div>
 
-                <div class="service-card">
-    <h3>💈 Barbing</h3>
-    <p>Find and book a barber.</p>
-    <button class="book-service" data-service="Barbing">
-        Book Now
-    </button>
+    <div class="service-card">
+        <img src="images/nails.jpg" alt="Nail service">
+        <h3>💅 Nails</h3>
+        <p>Book your nail appointment.</p>
+        <button class="book-service" data-service="Nails">
+            Book Now
+        </button>
+    </div>
+
+    <div class="service-card">
+        <img src="images/laundry.jpg" alt="Laundry service">
+        <h3>🧺 Laundry</h3>
+        <p>Get your laundry picked up and delivered.</p>
+        <button class="book-service" data-service="Laundry">
+            Book Now
+        </button>
+    </div>
+
 </div>
-
-<div class="service-card">
-    <h3>💅 Nails</h3>
-    <p>Book your nail appointment.</p>
-    <button class="book-service" data-service="Nails">
-        Book Now
-    </button>
-</div>
-
-<div class="service-card">
-    <h3>🧺 Laundry</h3>
-    <p>Get your laundry picked up and delivered.</p>
-    <button class="book-service" data-service="Laundry">
-        Book Now
-    </button>
-</div>
-
- </div>
-        </section>
-
         <!-- step card -->
          
 <section class="how-it-works" id="how-it-works">
@@ -157,7 +166,8 @@
     <button type="submit">Submit Booking Details</button>
 </form>
     <p id="booking-message" role="status"></p>
-    <div id="booking-review" hidden>
+    
+   <div id="booking-review" hidden>
     <h3>Review Your Booking</h3>
 
     <p id="review-details"></p>
@@ -166,6 +176,10 @@
 
     <button type="button" id="edit-booking">Edit Details</button>
     <button type="button" id="confirm-booking">Confirm Booking</button>
+
+    <button type="button" id="new-booking" hidden>
+        Start New Booking
+    </button>
 </div>
 </section>
             <section class="contact-section" id="contact">

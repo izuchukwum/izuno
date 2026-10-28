@@ -22,6 +22,8 @@ const editBookingButton = document.querySelector("#edit-booking");
 
 const confirmBookingButton = document.querySelector("#confirm-booking");
 
+const newBookingButton = document.querySelector("#new-booking");
+
 function getTodayDate(){
     const today =new Date();
 
@@ -63,6 +65,19 @@ bookingForm.addEventListener("submit", function (event) {
     const studentPhone =
         document.querySelector("#student-phone").value.trim();
 
+        
+const phonePattern = /^\+?[0-9\s()-]{7,20}$/;
+
+const digitCount = studentPhone.replace(/\D/g, "").length;
+
+if (!phonePattern.test(studentPhone) ||
+    digitCount < 7 ||
+    digitCount > 15) {
+    alert("Please enter a valid phone number, including your country code if needed.");
+    return;
+}
+
+
     const studentAddress =
         document.querySelector("#student-address").value.trim();
 
@@ -101,13 +116,34 @@ editBookingButton.addEventListener("click", function () {
 confirmBookingButton.addEventListener("click", function () {
     bookingReview.hidden = true;
 
+    // Clear the form after confirmation.
+    bookingForm.reset();
+
+    // Clear the selected service.
+    selectedService.textContent =
+        "Your selected service will appear here.";
+
     bookingMessage.innerHTML =
         "<strong>Booking Submitted Successfully!</strong><br><br>" +
         "Your booking request has been received. " +
         "We will contact you regarding your request.";
+
+    // Show the option to start another booking.
+    newBookingButton.hidden = false;
 });
 
-backToBookingButton.addEventListener("click", function () {
+
+newBookingButton.addEventListener("click", function () {
+    resetBookingPanel();
+
+    servicesSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+    newBookingButton.hidden = true;
+});
+function resetBookingPanel() {
     bookingForm.reset();
 
     selectedService.textContent =
@@ -118,6 +154,20 @@ backToBookingButton.addEventListener("click", function () {
     bookingReview.hidden = true;
     bookingForm.hidden = false;
     bookingPanel.hidden = true;
+}
+
+// Close and reset the booking when a navigation link is clicked
+const navigationLinks = document.querySelectorAll("nav a");
+
+navigationLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+        resetBookingPanel();
+    });
+});
+
+// Keep the existing Return to Booking behavior
+backToBookingButton.addEventListener("click", function () {
+    resetBookingPanel();
 
     servicesSection.scrollIntoView({
         behavior: "smooth",

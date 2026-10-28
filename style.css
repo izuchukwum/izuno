@@ -8,7 +8,7 @@
 /* 2. General page styling */
 
 
-/* 3. Website header */
+
 
 /* 3. Website header */
 header {
@@ -35,24 +35,36 @@ nav {
     gap: 25px;
 }
 
+
 nav a {
     text-decoration: none;
     color: #35443b;
     font-size: 15px;
     font-weight: 600;
-    transition: color 0.2s ease;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease,
+                color 0.3s ease;
 }
 
 nav a:hover {
     color: #176b45;
+    background-color: #e8f4ec;
 }
-
 
 /* 5. Hero section */
 .hero {
-    text-align: center;
-    padding: 90px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 70px 8%;
     background-color: #e8f4ec;
+    text-align: left;
+}
+
+.hero-content {
+    flex: 1;
 }
 
 .hero h2 {
@@ -65,7 +77,21 @@ nav a:hover {
     font-size: 18px;
     color: #555;
     margin-bottom: 25px;
+    line-height: 1.6;
 }
+
+.hero-image {
+    flex: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 
 /* 6. Main button */
 button {
@@ -94,22 +120,28 @@ button:hover {
     font-size: 30px;
     margin-bottom: 35px;
 }
-
 /* 8. Service cards layout */
 .service-container {
     display: flex;
     justify-content: center;
+    align-items: stretch;
     gap: 25px;
     flex-wrap: wrap;
+    margin-top: 30px;
 }
 
 /* 9. Individual service cards */
 .service-card {
     background-color: #ffffff;
-    padding: 30px 20px;
+    padding: 20px;
     border-radius: 14px;
     flex: 1 1 220px;
     max-width: 320px;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -119,14 +151,54 @@ button:hover {
     box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
 }
 
+/* Service card images */
+.service-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover img {
+    transform: perspective(600px) rotateY(10deg) translateY(-4px);
+}
+
+/* Service card heading */
 .service-card h3 {
     font-size: 22px;
     margin-bottom: 12px;
     color: #176b45;
 }
 
+/* Service card description */
 .service-card p {
     color: #666;
+    line-height: 1.6;
+}
+
+/* Book Now button */
+.service-card button {
+    margin-top: 15px;
+    width: 100%;
+    max-width: 180px;
+    cursor: pointer;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.service-card button:hover {
+    background-color: #0b3822;
+    transform: translateY(-4px);
+    box-shadow: 0 7px 16px rgba(0, 0, 0, 0.22);
+}
+
+/* Button click effect */
+.service-card button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 /* 10. Footer */
@@ -335,4 +407,89 @@ footer {
 #confirm-booking {
     background-color: #176b45;
     color: white;
+}
+
+/* Hero illustration */
+.hero-image {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    border-radius: 16px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* 6. Hero section for mobile devices */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 45px 20px;
+        gap: 25px;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero-image img {
+        max-width: 350px;
+    }
+}
+/* Service card images */
+.service-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Service image transition */
+.service-card img {
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Service image transition */
+.service-card img {
+    transition: transform 0.5s ease;
+}
+
+/* Rotate and lift image on hover */
+.service-card:hover img {
+    transform: perspective(600px) rotateY(10deg) translateY(-4px);
+}
+
+
+/* Book Now button effects */
+.service-card button {
+    transition: background-color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.service-card button:hover {
+    background-color: #0b3822;
+    transform: translateY(-4px);
+    box-shadow: 0 7px 16px rgba(0, 0, 0, 0.22);
+}
+
+/* Button click effect */
+.service-card button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
